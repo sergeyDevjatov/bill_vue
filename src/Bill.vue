@@ -17,7 +17,7 @@
                               v-click-outside="(event) => makeNonEditable(position, event)"
                               @dblclick.native="makeSomeEditable(position, column.name, $event)">
                 </EditableCell>
-                <th @click="removePosition(position, $event)">Удалить</th>
+                <th><span style="cursor: pointer;" @click="removePosition(position, $event)">Удалить</span></th>
             </tr>
             <tr>
                 <th scope="row">{{positions.length + 1}}</th>

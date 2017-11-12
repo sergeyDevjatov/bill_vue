@@ -28814,17 +28814,20 @@ var render = function() {
                   })
                 }),
                 _vm._v(" "),
-                _c(
-                  "th",
-                  {
-                    on: {
-                      click: function($event) {
-                        _vm.removePosition(position, $event)
+                _c("th", [
+                  _c(
+                    "span",
+                    {
+                      staticStyle: { cursor: "pointer" },
+                      on: {
+                        click: function($event) {
+                          _vm.removePosition(position, $event)
+                        }
                       }
-                    }
-                  },
-                  [_vm._v("Удалить")]
-                )
+                    },
+                    [_vm._v("Удалить")]
+                  )
+                ])
               ],
               2
             )

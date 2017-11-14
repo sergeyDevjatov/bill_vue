@@ -15,7 +15,8 @@
                               :type="column.type" :placeholder="column.title"
                               v-model="position[column.name].value" :editable="position[column.name].edit"
                               v-click-outside="(event) => makeNonEditable(position, event)"
-                              @dblclick.native="makeSomeEditable(position, column.name, $event)">
+                              @dblclick.native="makeSomeEditable(position, column.name, $event)"
+                              @keyup.enter.native="makeNonEditable(position, $event)">
                 </EditableCell>
                 <th><span style="cursor: pointer;" @click="removePosition(position, $event)">Удалить</span></th>
             </tr>
@@ -71,7 +72,7 @@
                 this.positions = this.positions.filter((p) => p.id !== position.id);
             },
             makeNonEditable(position, event){
-                if(event.target.tagName.toLocaleLowerCase() !== 'input')
+                if(event.type === 'keyup' || event.target.tagName.toLocaleLowerCase() !== 'input')
                     // make noneditable whole position
                     position.set_edit(false, false);
             },

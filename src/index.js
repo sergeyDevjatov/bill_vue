@@ -8,10 +8,5 @@ Vue.directive('click-outside', clickOutside);
 
 new Vue({
     el: '#app',
-    components: {Bill},
-    data(){
-        return {
-            title: "Воу, название?"
-        }
-    }
+    components: {Bill}
 });

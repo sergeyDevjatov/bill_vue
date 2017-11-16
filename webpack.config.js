@@ -1,6 +1,6 @@
 const path = require('path');
-var webpack = require('webpack');
-
+const webpack = require('webpack');
+const MinifyPlugin = require("babel-minify-webpack-plugin");
 
 module.exports = {
     entry: './src/index.js',
@@ -52,10 +52,10 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: /(node_modules|bower_components|dist)/,
                 loader: 'babel-loader',
                 query: {
-                    presets: ['es2015']
+                    presets: ['env']
                 }
             },
             {
@@ -78,6 +78,7 @@ module.exports = {
             Util: "exports-loader?Util!bootstrap/js/dist/util",
             Dropdown: "exports-loader?Dropdown!bootstrap/js/dist/dropdown",
         }),
-        new webpack.optimize.UglifyJsPlugin({ minimize: true })
+        new MinifyPlugin(),
+        new BundleAnalyzerPlugin()
     ]
 };

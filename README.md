@@ -1,7 +1,6 @@
 # bill_vue
 Simple bill on Vue.JS
-
-
+[![Build Status](https://travis-ci.org/sergeyDevjatov/bill_vue.svg?branch=master)](https://travis-ci.org/sergeyDevjatov/bill_vue)
 
 ## Installation
 #### Requirements
